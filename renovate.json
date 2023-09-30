@@ -17,7 +17,18 @@
       "depNameTemplate": "GitVersioning Update",
       "extractVersionTemplate": "^(?<version>.*)$",
       "versioningTemplate": "semver"
+    },
+    {
+      "fileMatch": ["chart.yml$"],
+      "datasourceTemplate": "custom.tool_generic",
+      "matchStrings": [
+        "\\s*test123:\\s*(?<currentValue>[^\\n]*)"
+      ],
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
     }
+
+
+
   ],
 
   "customDatasources": {
@@ -26,19 +37,6 @@
       "extractVersionTemplate": "\\s*appVersion:\\s*(?<currentValue>[^\\n]*)"
     }
   },
-
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": ["chart.yml$"],
-      "datasourceTemplate": "custom.tool_generic",
-      "matchStrings": [
-        "\\s*test123:\\s*(?<currentValue>[^\\n]*)"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
-  ]
-
 
 }
 
