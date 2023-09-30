@@ -22,15 +22,14 @@
       "description": "Update chart Plugins",
       "fileMatch": ["chart.yaml$"],
       "matchStrings": [
-        "\"\\\\s*test123:\\\\s*(?<currentValue>[^\\\\n]*)\""
+        "\\s*test123:\\s*(?<currentValue>[^\\n]*)"
       ],
       "datasourceTemplate": "helm",
-      "packageNameTemplate": "TOwens1987/GitVersioning",
-      "depNameTemplate": "Chart Update",
+      "packageNameTemplate": "https://github.com/TOwens1987/GitVersioning/blob/main/chart.yaml",
+      "depNameTemplate": "https://github.com/TOwens1987/GitVersioning/blob/main/chart.yaml",
       "extractVersionTemplate": "\\s*appVersion:\\s*(?<currentValue>[^\\n]*)",
       "versioningTemplate": "semver",
-      "registryUrlTemplate": "https://github.com/TOwens1987/GitVersioning/blob/main/chart.yaml",
 
     }
-  ],
+  ]
 }
