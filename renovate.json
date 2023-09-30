@@ -33,21 +33,4 @@
 
     }
   ],
-
-  "customManagers": [
-    {
-      "customType": "regex",
-      "fileMatch": ["chart.yml$"],
-      "datasourceTemplate": "custom.tool_generic",
-      "matchStrings": [
-        "\\s*test123:\\s*(?<currentValue>[^\\n]*)"
-      ],
-      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
-    }
-  ]
-
-
-}
-
-
 }
